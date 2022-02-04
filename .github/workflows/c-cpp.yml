@@ -17,6 +17,8 @@ jobs:
       uses: fiam/arm-none-eabi-gcc@v1.0.2
       with:
         release: '9-2020-q2'
+      env:
+        ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     
     - name: "Print some env variables. "
       run: echo "Folder -> $GITHUB_WORKSPACE"
