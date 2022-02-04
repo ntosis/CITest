@@ -23,4 +23,4 @@ jobs:
     - name: "Print some env variables. "
       run: echo "Folder -> $GITHUB_WORKSPACE"
     - name: "Make command. "
-      run: make -j8 all
+      run: make -f Debug/makefile -j8 all
