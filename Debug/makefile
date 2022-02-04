@@ -61,8 +61,8 @@ all: main-build
 main-build: TestSPIWitnL152RE.elf secondary-outputs
 
 # Tool invocations
-TestSPIWitnL152RE.elf: $(OBJS) $(USER_OBJS) /home/unix/STM32CubeIDE/workspace_1.7.0/TestSPIWitnL152RE/STM32L152RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "TestSPIWitnL152RE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"/home/unix/STM32CubeIDE/workspace_1.7.0/TestSPIWitnL152RE/STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestSPIWitnL152RE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+TestSPIWitnL152RE.elf: $(OBJS) $(USER_OBJS) ../STM32L152RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "TestSPIWitnL152RE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"../STM32L152RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TestSPIWitnL152RE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
