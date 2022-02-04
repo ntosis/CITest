@@ -1,2 +1,7 @@
-Debug/
-Debug
+*.o
+*.su
+*.d
+*.bin
+*.elf
+*.list
+*.map
