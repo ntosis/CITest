@@ -2,14 +2,19 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ] # set the trigger and the name of the bracnh
   pull_request:
     branches: [ main ]
 
 jobs:
   build:
     name: testNAmeOfPipeLine
-    runs-on: ubuntu-18.04
+    # use Ubuntu on the runner
+    runs-on: ubuntu-18.04 
+    defaults:
+      run:
+        # set the working directory optional, 'eq. to cd /folder'
+        working-directory: ./Debug
 
     steps:
     - uses: actions/checkout@v2
@@ -18,9 +23,10 @@ jobs:
       with:
         release: '9-2020-q2'
       env:
+        #this is a special option because the gcc arm instalation is not correctly.
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     
     - name: "Print some env variables. "
       run: echo "Folder -> $GITHUB_WORKSPACE"
     - name: "Make command. "
-      run: make -f Debug/makefile -j8 all
+      run: make -j8 all
