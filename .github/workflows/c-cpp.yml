@@ -54,6 +54,11 @@ jobs:
   matlab-test:
     name: Run MATLAB Script
     runs-on: ubuntu-18.04 
+    defaults:
+      run:
+        # set the working directory optional, 'eq. to cd /folder'
+        working-directory: ./Matlab
+    
     steps:
       # configure Matlab tests
     - name: Set up MATLAB
@@ -61,6 +66,5 @@ jobs:
     - name: Run script
       uses: matlab-actions/run-command@v1
       with:
-        working-directory: ./Matlab
         command: runTest_maxValis4
 
