@@ -62,5 +62,5 @@ jobs:
     - name: Run script
       uses: matlab-actions/run-command@v1
       with:
-        command: Matlab/runTest_maxValis4
+        command: addpath('Matlab'), runTest_maxValis4
 
