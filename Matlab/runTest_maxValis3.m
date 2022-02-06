@@ -9,6 +9,7 @@ function runTest_maxValis3()
     end
 
     % Ensure that we ALWAYS call exit
+    bdclose all;
     exit(exit_code);
 
 end

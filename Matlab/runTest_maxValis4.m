@@ -7,7 +7,8 @@ function runTest_maxValis4()
         disp(getReport(ME))
         exit_code = 1;
     end
-
+    
+    bdclose all;
     % Ensure that we ALWAYS call exit
     exit(exit_code);
 
