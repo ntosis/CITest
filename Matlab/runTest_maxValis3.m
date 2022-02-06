@@ -1,12 +1,14 @@
-% runtests.m
-exit_code = 0;
+function runTest_maxValis3()
+    exit_code = 0;
+    
+    try
+        sim('test_aModel_maxValis3.slx',10);
+    catch ME
+        disp(getReport(ME))
+        exit_code = 1;
+    end
 
-try
-    test_aModel_maxValis3
-catch ME
-    disp(getReport(ME))
-    exit_code = 1;
+    % Ensure that we ALWAYS call exit
+    exit(exit_code);
+
 end
-
-% Ensure that we ALWAYS call exit
-exit(exit_code);
