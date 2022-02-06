@@ -7,3 +7,4 @@
 *.map
 #exclude objects.list, it is used in makefiles.
 !objects.list
+**/slprj
