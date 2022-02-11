@@ -1,0 +1,23 @@
+name: python CI
+
+on:
+  push:
+    branches: [ python ] # set the trigger and the name of the bracnh
+  pull_request:
+    branches: [ python ]
+
+jobs:
+  build:
+    name: testNAmeOfPipeLine
+    # use Ubuntu on the runner
+    runs-on: windows 
+    defaults:
+      run:
+        # set the working directory optional, 'eq. to cd /folder'
+        working-directory: ./Debug
+
+    steps:
+    - uses: actions/checkout@v2
+        
+    - name: "Print some env variables from python. "
+      run: echo "Folder -> $GITHUB_WORKSPACE"
