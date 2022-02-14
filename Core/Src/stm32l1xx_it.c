@@ -23,6 +23,7 @@
 #include "stm32l1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+/* new comment */
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
