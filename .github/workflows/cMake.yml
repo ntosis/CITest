@@ -39,38 +39,8 @@ jobs:
       with:
         name: all artifacts
         path: |
-         ./Debug
-         !./Debug/**/*.mk
-         !./Debug/**/*.su
+         ./build/**/*.o
+         !./build/**/*.mk
+         !./build/**/*.su
         retention-days: 5
-    - name: Archive only ELF File
-      uses: actions/upload-artifact@v2
-      with:
-        name: only-ELF-file
-        path: ./Debug/**/*.elf
-        retention-days: 5
-        
-    - name: Download a single artifact
-      uses: actions/download-artifact@v2
-      with:
-        name: only-ELF-file
-  # configure Matlab tests      
-  matlab-test:
-    name: Run MATLAB Script
-    runs-on: ubuntu-18.04 
-        
-    steps:
-      # becareful! without checkin in a new job the files are not there 
-    - name: Check out repository
-      uses: actions/checkout@v2
-    - name: Set up MATLAB
-      uses: matlab-actions/setup-matlab@v1
-    - name: Test-case-1-MaxValueis4
-      uses: matlab-actions/run-command@v1
-      with:
-        command: addpath('Matlab'), runTest_maxValis4
-    - name: Test-case-2-MaxValueis3
-      uses: matlab-actions/run-command@v1
-      with:
-        command: addpath('Matlab'), runTest_maxValis3
 
