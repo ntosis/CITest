@@ -1,10 +1,10 @@
-name: C/C++ CI
+name: CMakeCI
 
 on:
   push:
-    branches: [ main ] # set the trigger and the name of the bracnh
+    branches: [ testCmake ] # set the trigger and the name of the bracnh
   pull_request:
-    branches: [ main ]
+    branches: [ testCmake ]
 
 jobs:
   build:
@@ -12,10 +12,7 @@ jobs:
     # use Ubuntu on the runner
     runs-on: ubuntu-18.04 
     defaults:
-      run:
-        # set the working directory optional, 'eq. to cd /folder'
-        working-directory: ./Debug
-
+      
     steps:
     - uses: actions/checkout@v2
     - name: arm-none-eabi-gcc
@@ -25,11 +22,19 @@ jobs:
       env:
         #this is a special option because the gcc arm instalation is not correctly.
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-    
+    # Install latest CMake.
+    - uses: lukka/get-cmake@latest
     - name: "Print some env variables. "
-      run: echo "Folder -> $GITHUB_WORKSPACE"
-    - name: "Make command. "
-      run: make -j8 all
+      run: |
+	echo "Folder -> $GITHUB_WORKSPACE"
+	mkdir "build"
+	cd "build"
+	cmake ..
+
+    - name: "Make command."
+      run: |
+	cd "build"
+	make
     - name: Archive production artifacts
       uses: actions/upload-artifact@v2
       with:
