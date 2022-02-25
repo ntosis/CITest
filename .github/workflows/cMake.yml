@@ -10,8 +10,7 @@ jobs:
   build:
     name: testNAmeOfPipeLine
     # use Ubuntu on the runner
-    runs-on: ubuntu-18.04 
-    defaults:
+    runs-on: ubuntu-18.04
       
     steps:
     - uses: actions/checkout@v2
@@ -26,15 +25,15 @@ jobs:
     - uses: lukka/get-cmake@latest
     - name: "Print some env variables. "
       run: |
-	echo "Folder -> $GITHUB_WORKSPACE"
-	mkdir "build"
-	cd "build"
-	cmake ..
+       echo "Folder -> $GITHUB_WORKSPACE"
+       mkdir "build"
+       cd "build"
+       cmake ..
 
     - name: "Make command."
       run: |
-	cd "build"
-	make
+       cd "build"
+       make
     - name: Archive production artifacts
       uses: actions/upload-artifact@v2
       with:
