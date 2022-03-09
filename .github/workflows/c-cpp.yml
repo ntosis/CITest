@@ -26,11 +26,17 @@ jobs:
         #this is a special option because the gcc arm instalation is not correctly.
         ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
     
-    - name: "Print some env variables. "
+    - name: "Print some env variables."
       run: echo "Folder -> $GITHUB_WORKSPACE"
+    - name: Cache Debug Folder
+      uses: actions/cache@v2.1.7
+      with:
+       path: |
+        ~/Debug
+       key: ${{ runner.os }}
     - name: "Make command. "
       run: make -j8 all
-    - name: Archive production artifacts
+    - name: "Archive production artifacts"
       uses: actions/upload-artifact@v2
       with:
         name: all artifacts
