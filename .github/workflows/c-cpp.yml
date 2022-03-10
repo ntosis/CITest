@@ -32,7 +32,7 @@ jobs:
       uses: actions/cache@v2.1.7
       with:
        path: |
-        ~/Debug
+        ~/../Debug
        key: ${{ runner.os }}
     - name: "Make command. "
       run: make -j8 all
