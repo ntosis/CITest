@@ -50,7 +50,7 @@ SPI_HandleTypeDef hspi1;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_SPI1_Init(void);
-/* new comment */
+/* new comment 2 */
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
