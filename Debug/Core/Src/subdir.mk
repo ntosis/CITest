@@ -10,6 +10,7 @@ C_SRCS += \
 ../Core/Src/stm32l1xx_it.c \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
+../Core/Src/test1.c \
 ../Core/Src/system_stm32l1xx.c 
 
 OBJS += \
@@ -18,6 +19,7 @@ OBJS += \
 ./Core/Src/stm32l1xx_it.o \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
+../Core/Src/test1.o \
 ./Core/Src/system_stm32l1xx.o 
 
 C_DEPS += \
@@ -26,6 +28,7 @@ C_DEPS += \
 ./Core/Src/stm32l1xx_it.d \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
+../Core/Src/test1.d \
 ./Core/Src/system_stm32l1xx.d 
 
 
