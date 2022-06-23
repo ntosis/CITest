@@ -36,7 +36,7 @@ extern "C" {
 extern int varOne;
 volatile int varTwo;
 int main(void);
-
+void IamFunc(void);
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
