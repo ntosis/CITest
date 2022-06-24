@@ -33,7 +33,7 @@ jobs:
     - name: "Make command. "
       run: |
        cd Debug
-       make -j8
+       make -j8 --debug=basic
     - name: "Archive production artifacts"
       uses: actions/upload-artifact@v2
       with:
